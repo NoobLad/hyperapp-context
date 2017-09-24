@@ -5,7 +5,7 @@
   "keywords": [
     "hyperapp",
     "mixin",
-    "connected"
+    "context"
   ],
   "author": "Lafole Ludovic",
   "license": "MIT",
