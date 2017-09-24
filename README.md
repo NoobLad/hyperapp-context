@@ -65,7 +65,7 @@ function Theme(props, children, context, setChildContext) {
     color: props.color,
   })
   
-  return <div>{children}</div>
+  return children
 }
 
 function Button(props, children, context) {
