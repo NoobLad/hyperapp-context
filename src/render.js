@@ -1,31 +1,31 @@
 export function render(state, actions, view) {
   return function(state, actions) {
     return asVDomNode({}, view(state, actions))
-
-    function asVDomNode(context, node) {
-      if (typeof node !== "object") return node
-      if (typeof node.tag === "function") {
-        node = node.tag(node.data, node.children, context, setContext)
-      }
-      if (Array.isArray(node)) return walkChildren(node)
-
-      node.children = node.children && walkChildren(node.children)
-
-      return node
-
-      function setContext(newContext) {
-        return (context = merge(context, newContext))
-      }
-
-      function walkChildren(children) {
-        return flattenChildren(
-          children.map(asVDomNode.bind(null, context)).filter(function(v) {
-            return v && v !== true
-          })
-        )
-      }
-    }
   }
+}
+
+function asVDomNode(context, node) {
+  if (typeof node !== "object") return node
+  if (typeof node.tag === "function") {
+    node = node.tag(node.data, node.children, context, setContext)
+  }
+  if (Array.isArray(node)) return walkChildren(node, context)
+
+  node.children = node.children && walkChildren(node.children, context)
+
+  return node
+
+  function setContext(newContext) {
+    return (context = merge(context, newContext))
+  }
+}
+
+function walkChildren(children, context) {
+  return flattenChildren(
+    children.map(asVDomNode.bind(null, context)).filter(function(v) {
+      return v && v !== true
+    })
+  )
 }
 
 function merge(v1, v2) {
