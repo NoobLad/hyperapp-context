@@ -11,7 +11,7 @@ function renderTree(tree, state = {}, actions = {}) {
 test("empty node", () => {
   expect(renderTree(h("div"))).toEqual({
     tag: "div",
-    props: {},
+    data: {},
     children: []
   })
 })
@@ -19,7 +19,7 @@ test("empty node", () => {
 test("simple props", () => {
   expect(renderTree(h("div", { className: "hello" }))).toEqual({
     tag: "div",
-    props: { className: "hello" },
+    data: { className: "hello" },
     children: []
   })
 })
@@ -35,16 +35,16 @@ test("nesting", () => {
   )
   const expected = {
     tag: "div",
-    props: {},
+    data: {},
     children: [
       {
         tag: "h1",
-        props: {},
+        data: {},
         children: ["hello"]
       },
       {
         tag: "p",
-        props: {
+        data: {
           className: "message"
         },
         children: ["world"]
@@ -60,7 +60,7 @@ test("component", () => {
 
   expect(renderTree(h(Title, { text: "hello" }, "world"))).toEqual({
     tag: "h1",
-    props: {},
+    data: {},
     children: ["hello"]
   })
 })
@@ -76,11 +76,11 @@ test("component with context", () => {
     renderTree(h(Config, { text: "hello" }, h(Title, {}, "world")))
   ).toEqual({
     tag: "div",
-    props: {},
+    data: {},
     children: [
       {
         tag: "h1",
-        props: {},
+        data: {},
         children: ["hello"]
       }
     ]
@@ -104,15 +104,15 @@ test("component with nested context", () => {
     )
   ).toEqual({
     tag: "div",
-    props: {},
+    data: {},
     children: [
       {
         tag: "div",
-        props: {},
+        data: {},
         children: [
           {
             tag: "h1",
-            props: {},
+            data: {},
             children: ["1"]
           }
         ]
