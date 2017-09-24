@@ -92,6 +92,7 @@ app({
     </Router>
   },
   mixin: [
+    context,
     ContextualRouter
   ]
 })
@@ -109,8 +110,7 @@ app({
     </Router>
   },
   mixin: [
-    context,
-    ContextualRouter
+    Router
   ]
 })
 ```
