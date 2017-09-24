@@ -1,6 +1,6 @@
 {
   "name": "hyperapp-context",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "hyperapp mixin to add context",
   "keywords": [
     "hyperapp",
