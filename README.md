@@ -86,7 +86,7 @@ app({
   view(state, actions) {
     return <Router>
       <Link to="/home"/>
-      <Link to="/home"/>
+      <Link to="/hello"/>
       <Route path="/home" component={Home}></Route>
       <Route path="/hello" component={Hello}></Route>
     </Router>
@@ -103,7 +103,7 @@ app({
   view(state, actions) {
     return <Router>
       <Link to="/home" go={actions.go}/>
-      <Link to="/home" go={actions.go}/>
+      <Link to="/hello" go={actions.go}/>
       <Route path="/home" component={Home}></Route>
       <Route path="/hello" component={Hello}></Route>
     </Router>
