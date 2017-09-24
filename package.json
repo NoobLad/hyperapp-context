@@ -1,0 +1,45 @@
+{
+  "name": "hyperapp-context",
+  "version": "0.0.1",
+  "description": "hyperapp mixin to add context",
+  "keywords": [
+    "hyperapp",
+    "mixin",
+    "connected"
+  ],
+  "author": "Lafole Ludovic",
+  "license": "MIT",
+  "main": "dist/context.min.js",
+  "jsnext:main": "src/index.js",
+  "module": "src/index.js",
+  "repository": "nooblad/hyperapp-context",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "test": "jest --coverage --no-cache",
+    "build": "npm run bundle && npm run minify",
+    "bundle": "rollup -i src/index.js -o dist/context.js -m -f umd -n context",
+    "minify": "uglifyjs dist/context.js -o dist/context.min.js --mangle --compress 'warnings=\"false\",pure_funcs=\"Object.defineProperty\"' --source-map content=dist/context.js.map",
+    "prepublish": "npm run build",
+    "format": "prettier --semi false --write './**/*.js'",
+    "release": "npm run build && npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
+  },
+  "babel": {
+    "presets": "es2015"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "bundlesize": "^0.13.2",
+    "jest": "^21.1.0",
+    "rollup": "^0.47.6",
+    "uglify-js": "^3.0.28"
+  },
+  "peerDependencies": {
+    "hyperapp": "0.12.*"
+  },
+  "dependencies": {
+    "prettier": "^1.7.0"
+  }
+}
