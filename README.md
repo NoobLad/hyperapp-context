@@ -40,7 +40,7 @@ If `MessageDisplay` is a child of `MessageProvider` then the value of message in
 
 The context is inherited from the component tree, so each node of the tree have his own context depending on the value of it's parent.
 
-A more complex example :
+A more complex example (in [codepen](https://codepen.io/nooblad/pen/LzbrrY?editors=0010) ) :
 
 ```js
 import {app} from "hyperapp"
