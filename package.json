@@ -23,7 +23,7 @@
     "bundle": "rollup -i src/index.js -o dist/context.js -m -f umd -n context",
     "minify": "uglifyjs dist/context.js -o dist/context.min.js --mangle --compress 'warnings=\"false\",pure_funcs=\"Object.defineProperty\"' --source-map content=dist/context.js.map",
     "prepublish": "npm run build",
-    "format": "prettier --semi false --write './**/*.js'",
+    "format": "prettier --semi false --write './src/**/*.js'",
     "release": "npm run build && npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
   },
   "babel": {
