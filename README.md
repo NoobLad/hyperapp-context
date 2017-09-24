@@ -124,7 +124,6 @@ But it's a powerful addition for libraries developer.
 ## Going further
 
 - [ ] tweak the code to make it lighter
-- [ ] since components are lazily evaluated could add shouldComponentUpdate behaviour, but seems too far from patch for it to work efficiently.
 - [ ] better documentation
 - [ ] more examples
 
