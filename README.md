@@ -78,7 +78,7 @@ function Button(props, children, context) {
 ## Why ?
 
 To provide a way to pass implicit parameters to components.
-The most important use i see is to provide a simple way to implement react-redux like pattern to provide the state (or part of it) to connected components without the use of global variables.
+One of the uses i see is to provide a simple way to implement react-redux like pattern to provide the state (or part of it) to connected components without the use of global variables.
 
 Another example could be for a router, to permit to use an action to change the url like this :
 ```js
@@ -118,7 +118,7 @@ app({
 ## Warn
 
 Using implicit value can make the code harder to read. 
-It's practical tool but can also lead you to complicated code, making your app harder to maintain.
+It's a practical tool but can also lead you to complicated code, making your app harder to maintain.
 But it's a powerful addition for libraries developer.
 
 ## Going further
